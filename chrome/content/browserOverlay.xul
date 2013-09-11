@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet type="text/css"
+  href="chrome://captainsafetydetection/skin/browserOverlay.css" ?>
+
+<!DOCTYPE overlay SYSTEM
+  "chrome://captainsafetydetection/locale/browserOverlay.dtd">
+
+<overlay id="captainsafetydetection-browser-overlay"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script type="application/x-javascript"
+    src="chrome://captainsafetydetection/content/browserOverlay.js" />
+
+<keyset>
+  <key id="key-enable"  modifiers="shift" key="E" oncommand="fromkey(event);"/>
+</keyset>
+
+<keyset>
+  <key id="key-disable" modifiers="shift" key="D" oncommand="fromkey(event);"/>
+</keyset>
+
+<keyset>
+  <key id="key-option" modifiers="shift" key="O" oncommand="fromkey(event);"/>
+</keyset>
+
+<keyset>
+  <key id="key-option2" modifiers="shift" key="T" oncommand="training(event);"/>
+</keyset>
+
+
+<menupopup id="menuWebDeveloperPopup">
+  <menu id="cs-menu" label="Captain Safety" insertafter="menu_scratchpad">
+     <menupopup>      
+           <menuitem type="radio" name="action" id="radio_on" label="Enable"  oncommand="action(event);" key="key-enable"/>
+           <menuitem type="radio" name="action" id="radio_off" label="Disable" checked="true" oncommand="action(event);" key="key-disable"/>
+           <menuseparator />
+           <!--<menuitem name="options_cf" label="Options" oncommand="option(event);" key="key-option"/>-->
+           <menu id="detection_mode" label="Detection Level">
+           	 <menupopup>
+			     <menuitem type="radio" name="detection" id="level_normal" label="Normal"  checked="true" oncommand="level(event);"/>
+                     <menuitem type="radio" name="detection" id="level_medium" label="Medium"  oncommand="level(event);"/>
+                     <menuitem type="radio" name="detection" id="level_strong" label="Strong"  oncommand="level(event);"/>
+           	 </menupopup>
+           </menu>
+           <menuitem name="choosefile_cf" label="Training File" oncommand="training(event);" key="key-option2"/>      
+     </menupopup> 
+  </menu>
+</menupopup>
+
+<menupopup id="appmenu_webDeveloper_popup">
+  <menu id="cs-menu2" label="Captain Safety">
+     <menupopup>      
+           <menuitem type="radio" name="action" id="radio_on2" label="Enable"  oncommand="action(event);" key="key-enable"/>
+           <menuitem type="radio" name="action" id="radio_off2" label="Disable" checked="true" oncommand="action(event);" key="key-disable"/>
+           <menuseparator />
+           <!--<menuitem name="options_cf" label="Options" oncommand="option(event);" key="key-option"/>-->
+           <menu id="detection_mode2" label="Detection Level">
+           	 <menupopup>
+			     <menuitem type="radio" name="detection" id="level_normal2" label="Normal"  checked="true" oncommand="level(event);"/>
+                     <menuitem type="radio" name="detection" id="level_medium2" label="Medium"  oncommand="level(event);"/>
+                     <menuitem type="radio" name="detection" id="level_strong2" label="Strong"  oncommand="level(event);"/>
+           	 </menupopup>
+           </menu>
+           <menuitem name="choosefile_cf" label="Training File" oncommand="training(event);" key="key-option2"/>      
+     </menupopup> 
+  </menu>
+</menupopup>
+
+
+<toolbarpalette id="BrowserToolbarPalette">
+    <toolbarbutton id="button_cs" class="logo" name="Disable" label="Captain Safety" tooltiptext="Captain Safety is ofline" oncommand="action(event);"/>
+</toolbarpalette>
+
+
+
+</overlay>
+
+
+

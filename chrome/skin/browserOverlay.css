@@ -1,0 +1,4 @@
+.logo{
+  list-style-image: url("chrome://captainsafetydetection/skin/captain_america_shield_16x16_black.png");
+  -moz-image-region: rect(0px, 16px, 16px, -6px);
+}

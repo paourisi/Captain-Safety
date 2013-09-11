@@ -1,0 +1,5 @@
+content   captainsafetydetection                  content/
+skin      captainsafetydetection  classic/1.0     skin/
+locale    captainsafetydetection  en-US           locale/en-US/
+
+overlay chrome://browser/content/browser.xul  chrome://captainsafetydetection/content/browserOverlay.xul
